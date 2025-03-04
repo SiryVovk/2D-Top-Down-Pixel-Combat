@@ -4,6 +4,10 @@ public class StaminaPotion : MonoBehaviour, IPotion
 {
     public void UsePotion()
     {
-        Stamina.Instanse.RefreshStamina();
+        if (ActiveInventory.Instanse.NumberOfStaminaPotions > 0)
+        {
+            Stamina.Instanse.RefreshAllStamina();
+            ActiveInventory.Instanse.DecreceNumberOfStaminaPotions();
+        }
     }
 }

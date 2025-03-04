@@ -602,7 +602,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e230e51a1d1a2b942ac3170fec07ca3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 10
   knockBackTrust: 10
   invencibleTime: 1
 --- !u!114 &8600635936824306099

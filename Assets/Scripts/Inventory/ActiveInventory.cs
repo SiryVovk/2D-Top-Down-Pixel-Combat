@@ -1,10 +1,21 @@
+using TMPro;
 using UnityEngine;
 
 public class ActiveInventory : Singlton<ActiveInventory>
 {
+    [SerializeField] private TMP_Text healthText;
+    [SerializeField] private TMP_Text staminaText;
+
     private int activeSlot = 0;
+    private int startingNumberOfHealthPotions = 3;
+    private int staringNumberOfStaminaPotions = 3;
+    private int numberOfHealthPotions;
+    private int numberOfStaminaPotions;
 
     private PlayerControls playerControl;
+
+    public int NumberOfHealthPotions { get { return numberOfHealthPotions; } private set { numberOfHealthPotions = value; } }
+    public int NumberOfStaminaPotions { get { return numberOfStaminaPotions; } private set { numberOfStaminaPotions = value; } }
 
     protected override void Awake()
     {
@@ -16,6 +27,7 @@ public class ActiveInventory : Singlton<ActiveInventory>
     private void OnEnable()
     {
         playerControl.Enable();
+        PlayerHelth.OnPlayerDeath += RefreshInventoryOnDeath;
     }
 
     private void OnDisable()
@@ -24,11 +36,17 @@ public class ActiveInventory : Singlton<ActiveInventory>
         {
             playerControl.Disable();
         }
+
+        PlayerHelth.OnPlayerDeath -= RefreshInventoryOnDeath;
     }
 
     private void Start()
     {
         playerControl.Inventory.ChangeSlot.performed += ctx => TogleActiveSlot((int)ctx.ReadValue<float>());
+
+        numberOfHealthPotions = startingNumberOfHealthPotions;
+        numberOfStaminaPotions = staringNumberOfStaminaPotions;
+        UpdetePotionNumbersText();
     }
 
     public void EqipFirstWeapon()
@@ -91,7 +109,7 @@ public class ActiveInventory : Singlton<ActiveInventory>
         bool hasPotion = potionInfoSO != null;
 
         ActiveWeapon.Instanse.ChangeWeapon(hasWeapon ? SpawnObject(weponInfoSO.weaponPrefab, ActiveWeapon.Instanse.transform, ActiveWeapon.Instanse.transform.rotation) : null);
-        ActivePotion.Instanse.ChangeActivePotion(hasPotion ? SpawnObject(potionInfoSO.potionPrefab, ActivePotion.Instanse.transform, ActivePotion.Instanse.transform.rotation) : null);
+        ActivePotion.Instanse.ChangeActivePotion(hasPotion ? SpawnObject(potionInfoSO.potionPrefab, ActivePotion.Instanse.transform, Quaternion.identity) : null);
     }
 
     private MonoBehaviour SpawnObject(GameObject prefab, Transform itemTransform, Quaternion itemRotation)
@@ -101,4 +119,28 @@ public class ActiveInventory : Singlton<ActiveInventory>
         return newItem.GetComponent<MonoBehaviour>();
     }
 
+    private void UpdetePotionNumbersText()
+    {
+        healthText.text = numberOfHealthPotions.ToString();
+        staminaText.text = numberOfStaminaPotions.ToString();
+    }
+
+    public void DecreceNumberOfHealthPotions()
+    {
+        numberOfHealthPotions--;
+        UpdetePotionNumbersText();
+    }
+
+    public void DecreceNumberOfStaminaPotions()
+    {
+        numberOfStaminaPotions--;
+        UpdetePotionNumbersText();
+    }
+
+    private void RefreshInventoryOnDeath()
+    {
+        numberOfHealthPotions = startingNumberOfHealthPotions;
+        numberOfStaminaPotions = staringNumberOfStaminaPotions;
+        UpdetePotionNumbersText();
+    }
 }

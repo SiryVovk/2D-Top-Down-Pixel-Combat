@@ -45,7 +45,7 @@ public class Stamina : Singlton<Stamina>
         UpdateStaminaImages();
     }
 
-    public void RefreshStaminaOnDeath()
+    public void RefreshAllStamina()
     {
         CurrentStamina = startingStamina;
 

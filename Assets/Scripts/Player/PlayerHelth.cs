@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -5,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerHelth : Singlton<PlayerHelth>
 {
+    public static event Action OnPlayerDeath;
     public bool IsDead { get; private set; }
 
     [SerializeField] private int maxHealth = 3;
@@ -98,6 +100,7 @@ public class PlayerHelth : Singlton<PlayerHelth>
             Destroy(ActiveWeapon.Instanse.gameObject);
             IsDead = true;
             animator.SetTrigger(DEATH_STRING);
+            OnPlayerDeath?.Invoke();
             StartCoroutine(DeathRoutin());
         }
     }
@@ -106,7 +109,7 @@ public class PlayerHelth : Singlton<PlayerHelth>
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
-        Stamina.Instanse.RefreshStaminaOnDeath();
+        Stamina.Instanse.RefreshAllStamina();
         SceneManager.LoadScene(TOWN_SCENE_MANAGER);
     }
 }
