@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 5898437447851795890}
   - component: {fileID: 8600635936824306099}
   - component: {fileID: 2554579139319113978}
+  - component: {fileID: 4380166534044595468}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -634,3 +635,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fullStamina: {fileID: -7799045602948881875, guid: b3da4fa90dfa846419b9e92464c998db, type: 3}
   emtyStamina: {fileID: 4634418647378881802, guid: d2bb35c05a1b64542956cf547f74780a, type: 3}
+--- !u!114 &4380166534044595468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7145668356810568460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2285453c736c2424889625d23f1cb367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

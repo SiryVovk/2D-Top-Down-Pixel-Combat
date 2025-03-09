@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8749846335273693423}
   - component: {fileID: 6853148110172617508}
   - component: {fileID: 4133869604100940427}
+  - component: {fileID: 772155778460262722}
   m_Layer: 0
   m_Name: SlaimBos
   m_TagString: Untagged
@@ -92,7 +93,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -106,17 +107,32 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76992950382010825}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fe6e2bb5141a0d4eae010f8be618f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slimePrefab: {fileID: 2619325525076780149, guid: 15af9518376e4904ea14140952424cdd, type: 3}
-  maxHealth: 10
+  maxHealth: 300
   damage: 3
-  bosSpeed: 4
-  bosSpeedSecondPhazeIncIncrees: 2
+  bosSpeed: 3
+  bosSpeedSecondPhazeIncIncrees: 1.5
   timeBeetwenSlimeSpawn: 2
+--- !u!114 &772155778460262722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76992950382010825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599de84e945d57e4999e82bd55b608ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashingMat: {fileID: 2100000, guid: 2927ccbfcc7e12b49bfca555403514bc, type: 2}
+  spriteRenderer: {fileID: 9014849304188517314}
+  flashDuratin: 0.2
 --- !u!1 &86579299375795657
 GameObject:
   m_ObjectHideFlags: 0

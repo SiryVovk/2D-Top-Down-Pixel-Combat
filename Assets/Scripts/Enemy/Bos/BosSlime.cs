@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +14,7 @@ public class BosSlime : MonoBehaviour
     [SerializeField] private float timeBeetwenSlimeSpawn = 2f;
 
     private GameObject bosConteiner;
+    private GameObject endGameContainer;
     private Slider slider;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -29,6 +31,8 @@ public class BosSlime : MonoBehaviour
     {
         currentHealth = maxHealth;
         bosConteiner = GameObject.Find(BOS_CONTEINER_STRING);
+        EndGameScreen endGameScreen = Resources.FindObjectsOfTypeAll<EndGameScreen>().FirstOrDefault();
+        endGameContainer = endGameScreen.gameObject;
         slider = bosConteiner.GetComponentInChildren<Slider>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -92,6 +96,7 @@ public class BosSlime : MonoBehaviour
         if (currentHealth <= 0)
         {
             bosConteiner.SetActive(false);
+            endGameContainer.SetActive(true);
             Destroy(gameObject);
         }
     }

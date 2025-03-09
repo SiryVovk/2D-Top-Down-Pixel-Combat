@@ -137,6 +137,18 @@ public class ActiveInventory : Singlton<ActiveInventory>
         UpdetePotionNumbersText();
     }
 
+    public void IncreseNumberOfHealthPotions()
+    {
+        numberOfHealthPotions++;
+        UpdetePotionNumbersText();
+    }
+
+    public void IncreseNumberOfStaminaPotions()
+    {
+        numberOfStaminaPotions++;
+        UpdetePotionNumbersText();
+    }
+
     private void RefreshInventoryOnDeath()
     {
         numberOfHealthPotions = startingNumberOfHealthPotions;

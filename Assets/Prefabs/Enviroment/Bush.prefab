@@ -218,5 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickUpsToSpawn:
   - {fileID: 3333340501740272594, guid: 27b8c6495798caa43bfc695248d12a15, type: 3}
-  - {fileID: 2822123496339543975, guid: 2312c6d556fc54e4d9e6c32e79a9b87d, type: 3}
+  - {fileID: 3333340501740272594, guid: 27b8c6495798caa43bfc695248d12a15, type: 3}
   - {fileID: 1513515252095512043, guid: 1beab4dfaac7d0e4f91ab1d9919dffda, type: 3}
+  - {fileID: 3333340501740272594, guid: 27b8c6495798caa43bfc695248d12a15, type: 3}
+  - {fileID: 3333340501740272594, guid: 27b8c6495798caa43bfc695248d12a15, type: 3}
+  - {fileID: 2822123496339543975, guid: 2312c6d556fc54e4d9e6c32e79a9b87d, type: 3}
+  - {fileID: 3333340501740272594, guid: 27b8c6495798caa43bfc695248d12a15, type: 3}
