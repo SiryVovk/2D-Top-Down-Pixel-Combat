@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Stamina Globe_0: 149274048639845113
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

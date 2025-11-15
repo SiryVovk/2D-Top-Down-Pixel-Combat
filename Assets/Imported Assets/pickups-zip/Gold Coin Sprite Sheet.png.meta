@@ -335,7 +335,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gold Coin Sprite Sheet_0: -234688072440724827
+      Gold Coin Sprite Sheet_1: -2773521449510625339
+      Gold Coin Sprite Sheet_2: 3507830584120488930
+      Gold Coin Sprite Sheet_3: -3027942650856943503
+      Gold Coin Sprite Sheet_4: -8681122823199863251
+      Gold Coin Sprite Sheet_5: 8605766828651519105
+      Gold Coin Sprite Sheet_6: 4929703270696266693
+      Gold Coin Sprite Sheet_7: -1796587115917803789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
