@@ -20,3 +20,6 @@ A lightweight 2D top-down combat game prototype made in Unity.
 <img width="1553" height="864" alt="image" src="https://github.com/user-attachments/assets/d8375680-7040-4c8e-ac28-e45b8613dc82" />
 <img width="1552" height="863" alt="image" src="https://github.com/user-attachments/assets/af5fe955-2d87-487f-a04c-4fe033c675da" />
 <img width="1552" height="859" alt="image" src="https://github.com/user-attachments/assets/dc763f63-09eb-4f51-a9de-ff279c9065c1" />
+
+gameplay
+https://drive.google.com/file/d/1ZoHOdd6bzCFp7rKCZwFeyPIam_PwlcpM/view?usp=drive_link
